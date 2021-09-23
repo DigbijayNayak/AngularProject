@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -12,22 +27,23 @@
       crossorigin="anonymous"
     />
     <title>Profile Page</title>
+    <style>
+      #tab {
+        border: 2px solid rgb(195, 208, 211);
+      }
+    </style>
   </head>
   <body>
     <h1>My Profile</h1>
-    <div>
-      <img
-        src="https://i.ibb.co/yNGW4gg/avatar.png"
-        class="rounded-circle center"
-      />
-    </div>
-    <div class="container jumbotron">
+
+    <div class="container">
       <form>
-        <label for="First Name"><strong>Profile Details</strong></label>
-        <div class="row">
-          <div class="col-sm-6 form-group">
+        <h1><strong>Applicant Details</strong></h1>
+        <!-- <div class="row jumbotron">
+          <div class="col-12 form-group"></div>
+          <div class="col-sm-4 form-group">
             <label for="name-f">User's First Name</label>
-            <input
+            <inputs
               type="text"
               class="form-control"
               name="fname"
@@ -36,7 +52,7 @@
               required
             />
           </div>
-          <div class="col-sm-6 form-group">
+          <div class="col-sm-4 form-group">
             <label for="name-l">Last name</label>
             <input
               type="text"
@@ -47,7 +63,8 @@
               required
             />
           </div>
-          <div class="col-sm-6 form-group">
+
+          <div class="col-sm-4 form-group">
             <label for="name-f">Mother's First Name</label>
             <input
               type="text"
@@ -58,7 +75,7 @@
               required
             />
           </div>
-          <div class="col-sm-6 form-group">
+          <div class="col-sm-4 form-group">
             <label for="name-l">Last name</label>
             <input
               type="text"
@@ -69,7 +86,8 @@
               required
             />
           </div>
-          <div class="col-sm-6 form-group">
+          <br />
+          <div class="col-sm-4 form-group">
             <label for="name-f">Father's First Name</label>
             <input
               type="text"
@@ -80,7 +98,7 @@
               required
             />
           </div>
-          <div class="col-sm-6 form-group">
+          <div class="col-sm-4 form-group">
             <label for="name-l">Last name</label>
             <input
               type="text"
@@ -91,7 +109,7 @@
               required
             />
           </div>
-          <div class="col-sm-6 form-group">
+          <div class="col-sm-4 form-group">
             <label for="email">Email Id</label>
             <input
               type="email"
@@ -102,7 +120,7 @@
               required
             />
           </div>
-          <div class="col-sm-6 form-group">
+          <div class="col-sm-4 form-group">
             <label for="Date">Date Of Birth</label>
             <input
               type="Date"
@@ -113,7 +131,7 @@
               required
             />
           </div>
-          <div class="col-sm-6 form-group">
+          <div class="col-sm-4 form-group">
             <label for="sex">Gender</label>
             <select id="sex" class="form-control browser-default custom-select">
               <option value="male">Male</option>
@@ -121,7 +139,7 @@
               <option value="unspesified">Unspecified</option>
             </select>
           </div>
-          <div class="col-sm-2 form-group">
+          <div class="col-sm-4 form-group">
             <label for="caste">Caste</label>
             <select class="form-control browser-default custom-select">
               <option selected>SC</option>
@@ -141,13 +159,228 @@
               required
             />
           </div>
+          <div class="col-sm-4 form-group" style="float: right">
+            <img
+              src="https://i.ibb.co/yNGW4gg/avatar.png"
+              class="rounded-circle center"
+            /> -->
+        <!-- <img
+              src="https://i.ibb.co/yNGW4gg/avatar.png"
+              class="rounded float-right"
+              alt="img"
+            />
+            <img
+              id="blah"
+              src="https://ij.ibb.co/yNGW4gg/avatar.png156"
+              alt="your image"
+            /><br />
+
+            <input type="file" onchange="readURL(this);" />
+          </div>
+        </div> -->
+        <div class="col-md-12">
+        <div class="row">          
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="f-name">User Name</label><br />
+                <input
+                  type="text"
+                  name="f-name"
+                  [(ngModel)]="userobj.firstName"
+                  placeholder="First Name"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group">
+              <label for="l-name">Last Name</label>
+              <input
+                type="text"
+                name="l-name"
+                placeholder="Last Name"
+                class="form-control"
+              />
+            </div>
+            </div>
+          </div>
+          <label for="f-name">Mother's Name</label><br />
+          <input
+            type="text"
+            name="f-name"
+            placeholder="First Name"
+            style="width: 40%"
+          />
+          <input
+            type="text"
+            name="l-name"
+            placeholder="Last Name"
+            style="width: 40%"
+          /><br />
+          <label for="f-name">Father's Name</label><br />
+          <input
+            type="text"
+            name="f-name"
+            placeholder="First Name"
+            style="width: 40%"
+          />
+          <!-- <label for="l-name">Last Name</label> -->
+          <input
+            type="text"
+            name="l-name"
+            placeholder="Last Name"
+            style="width: 40%"
+          /><br />
+          <label for="Date">DOB</label>
+          <input
+            type="Date"
+            name="dob"
+            class="form-control"
+            id="Date"
+            placeholder=""
+            style="width: 35%; display: inline-block"
+            required
+          />
+          <label for="sex">Gender</label>
+          <select
+            id="sex"
+            class="form-control browser-default custom-select"
+            style="width: 13%; display: inline-block"
+          >
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="unspesified">Unspecified</option>
+          </select>
+          <label for="caste">Caste</label>
+          <select
+            class="form-control browser-default custom-select"
+            style="width: 13%; display: inline-block"
+          >
+            <option selected>SC</option>
+            <option>ST</option>
+            <option>OBC</option>
+            <option>General</option></select
+          ><br />
+          <label for="email">Email Id</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="email"
+            placeholder="Enter your email."
+            style="width: 32%; display: inline-block"
+            required
+          />
+          <label for="tel">Phone</label>
+          <input
+            type="tel"
+            name="phone"
+            class="form-control"
+            id="tel"
+            placeholder="Enter Your Contact Number."
+            style="width: 34%; display: inline-block"
+            required
+          />
+          <div class="col-sm-2">
+            <img
+              id="blah"
+              src="https://i.ibb.co/yNGW4gg/avatar.png"
+              alt="upload Image"
+              style="max-width: 180px"
+            />
+            <input type="file" onchange="readURL(this);" />
+          </div>
         </div>
       </form>
 
       <form>
         <label for="First Name"><strong>Address Details</strong></label>
-        <div class="row">
-          <div class="col-sm-6 form-group">
+        <div class="row jumbotron">
+          <div class="col-sm-6">
+            <table>
+              <tr id="tab">
+                <th style="text-align: center">Present Address</th>
+              </tr>
+              <tr>
+                <td>
+                  <label for="Address">Present Address</label><br />
+                  <input type="text" placeholder="Present Address" />
+                </td>
+                <td>
+                  <label for="Country">City</label>
+                  <select class="form-control custom-select browser-default">
+                    <option value="Afghanistan">Cuttack</option>
+                    <option value="Australia">Bhubaneswar</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="Country">State</label>
+                  <select class="form-control custom-select browser-default">
+                    <option value="Afghanistan">Odisha</option>
+                    <option value="Australia">Andhra Pradesh</option>
+                    <option value="Australia">Telengana</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="Country">Country</label>
+                  <select class="form-control custom-select browser-default">
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Australia">Australia</option>
+                  </select>
+                </td>
+                <!-- <td>
+                  <label for="Country">Country</label>
+                  <select class="form-control custom-select browser-default">
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Australia">Australia</option>
+                  </select>
+                </td> -->
+              </tr>
+            </table>
+          </div>
+          <div class="col-sm-6">
+            <table>
+              <tr id="tab">
+                <th>Permanent Address</th>
+              </tr>
+              <tr>
+                <td>
+                  <label for="Address">Permanent Address</label><br />
+                  <input type="text" placeholder="Permanent Address" />
+                </td>
+                <td>
+                  <label for="Country">City</label>
+                  <select class="form-control custom-select browser-default">
+                    <option value="Afghanistan">Cuttack</option>
+                    <option value="Australia">Bhubaneswar</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="Country">State</label>
+                  <select class="form-control custom-select browser-default">
+                    <option value="Afghanistan">Odisha</option>
+                    <option value="Australia">Andhra Pradesh</option>
+                    <option value="Australia">Telengana</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="Country">Country</label>
+                  <select class="form-control custom-select browser-default">
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Australia">Australia</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- <div class="row jumbotron">
+          <div class="col-sm-16 form-group" style="height: 250px">
             <label for="address-1">Present Address</label>
             <input
               type="address"
@@ -235,63 +468,93 @@
               <option value="Netherlands">Netherlands</option>
             </select>
           </div>
-        </div>
+        </div> -->
       </form>
-      <form class="form-horizontal">
-        <div class="col-sm-10">
-          <label for="First Name"><strong>Qualifications</strong></label>
-          <table class="bordered">
-            <tr>
-              <th>SI NO.</th>
-              <th>Examination</th>
-              <th>Board</th>
-              <th>Percentage</th>
-              <th>Year Of Passing</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Class X</td>
-              <td><input type="text" class="form-control" id="firstname" /></td>
-              <td><input type="text" class="form-control" id="firstname" /></td>
-              <td><input type="text" class="form-control" id="firstname" /></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Class XII</td>
-              <td><input type="text" class="form-control" id="firstname" /></td>
-              <td><input type="text" class="form-control" id="firstname" /></td>
-              <td><input type="text" class="form-control" id="firstname" /></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Graduation</td>
-              <td><input type="text" class="form-control" id="firstname" /></td>
-              <td><input type="text" class="form-control" id="firstname" /></td>
-              <td><input type="text" class="form-control" id="firstname" /></td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Masters</td>
-              <td><input type="text" class="form-control" id="firstname" /></td>
-              <td><input type="text" class="form-control" id="firstname" /></td>
-              <td><input type="text" class="form-control" id="firstname" /></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td id="all">(10 chac max)</td>
-              <td id="all">(upto 2 decimal)</td>
-            </tr>
-          </table>
+      <form>
+        <label for="First Name"><strong>Qualifications</strong></label>
+        <div class="row jumbotron">
+          <div class="col-sm-12">
+            <table id="tab">
+              <tr id="tab">
+                <th id="tab">SI NO.</th>
+                <th>Examination</th>
+                <th style="text-align: center">Board</th>
+                <th style="text-align: center">Percentage</th>
+                <th style="text-align: center">Year Of Passing</th>
+              </tr>
+              <tr>
+                <td id="tab">1</td>
+                <td>Class X</td>
+                <td>
+                  <input type="text" class="form-control" id="firstname" />
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="firstname" />
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="firstname" />
+                </td>
+              </tr>
+              <tr>
+                <td id="tab">2</td>
+                <td>Class XII</td>
+                <td>
+                  <input type="text" class="form-control" id="firstname" />
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="firstname" />
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="firstname" />
+                </td>
+              </tr>
+              <tr>
+                <td id="tab">3</td>
+                <td>Graduation</td>
+                <td>
+                  <input type="text" class="form-control" id="firstname" />
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="firstname" />
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="firstname" />
+                </td>
+              </tr>
+              <tr>
+                <td id="tab">4</td>
+                <td>Masters</td>
+                <td>
+                  <input type="text" class="form-control" id="firstname" />
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="firstname" />
+                </td>
+                <td>
+                  <input type="text" class="form-control" id="firstname" />
+                </td>
+              </tr>
+              <!-- <tr id="tab">
+                <td></td>
+                <td></td>
+                <td id="all">(10 chac max)</td>
+                <td id="all">(upto 2 decimal)</td>
+              </tr> -->
+            </table>
+          </div>
+
+          <!-- <form class="form-horizontal">
+            <div class="col-sm-10" style="text-align: right">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="reset" class="btn btn-default">Reset</button>
+            </div>
+          </form> -->
         </div>
-      </form>
-      <form class="form-horizontal">
-        <input type="file" /><br />
-        <div class="col-sm-10" style="text-align: center">
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="reset" class="btn btn-default">Reset</button>
+        <div class="cols-sm-12" style="text-align: right">
+          <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
         </div>
       </form>
     </div>
+    <script></script>
   </body>
 </html>

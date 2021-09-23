@@ -1,19 +1,24 @@
-
 label {
     font-weight: 600;
     color: #555;
-}
-
-
-h1{
+  }
+  
+  h1 {
     text-align: center;
-}
-.center {
+  }
+  .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 10%;
   }
-  .rounded-circle{
+  .rounded-circle {
     border-radius: 100%;
-}
+  }
+  img {
+    max-width: 180px;
+  }
+  input[type="file"] {
+    padding: 10px;
+  }
+  
