@@ -34,159 +34,22 @@
     </style>
   </head>
   <body>
-    <h1>My Profile</h1>
+    <h1>MY PROFILE</h1>
 
     <div class="container">
+      <h3  class="text-secondary"><strong>Applicant Details</strong></h3>
       <form>
-        <h1><strong>Applicant Details</strong></h1>
-        <!-- <div class="row jumbotron">
-          <div class="col-12 form-group"></div>
-          <div class="col-sm-4 form-group">
-            <label for="name-f">User's First Name</label>
-            <inputs
-              type="text"
-              class="form-control"
-              name="fname"
-              id="name-f"
-              placeholder="Enter your first name."
-              required
-            />
-          </div>
-          <div class="col-sm-4 form-group">
-            <label for="name-l">Last name</label>
-            <input
-              type="text"
-              class="form-control"
-              name="lname"
-              id="name-l"
-              placeholder="Enter your last name."
-              required
-            />
-          </div>
-
-          <div class="col-sm-4 form-group">
-            <label for="name-f">Mother's First Name</label>
-            <input
-              type="text"
-              class="form-control"
-              name="fname"
-              id="name-f"
-              placeholder="Enter your first name."
-              required
-            />
-          </div>
-          <div class="col-sm-4 form-group">
-            <label for="name-l">Last name</label>
-            <input
-              type="text"
-              class="form-control"
-              name="lname"
-              id="name-l"
-              placeholder="Enter your last name."
-              required
-            />
-          </div>
-          <br />
-          <div class="col-sm-4 form-group">
-            <label for="name-f">Father's First Name</label>
-            <input
-              type="text"
-              class="form-control"
-              name="fname"
-              id="name-f"
-              placeholder="Enter your first name."
-              required
-            />
-          </div>
-          <div class="col-sm-4 form-group">
-            <label for="name-l">Last name</label>
-            <input
-              type="text"
-              class="form-control"
-              name="lname"
-              id="name-l"
-              placeholder="Enter your last name."
-              required
-            />
-          </div>
-          <div class="col-sm-4 form-group">
-            <label for="email">Email Id</label>
-            <input
-              type="email"
-              class="form-control"
-              name="email"
-              id="email"
-              placeholder="Enter your email."
-              required
-            />
-          </div>
-          <div class="col-sm-4 form-group">
-            <label for="Date">Date Of Birth</label>
-            <input
-              type="Date"
-              name="dob"
-              class="form-control"
-              id="Date"
-              placeholder=""
-              required
-            />
-          </div>
-          <div class="col-sm-4 form-group">
-            <label for="sex">Gender</label>
-            <select id="sex" class="form-control browser-default custom-select">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="unspesified">Unspecified</option>
-            </select>
-          </div>
-          <div class="col-sm-4 form-group">
-            <label for="caste">Caste</label>
-            <select class="form-control browser-default custom-select">
-              <option selected>SC</option>
-              <option>ST</option>
-              <option>OBC</option>
-              <option>General</option>
-            </select>
-          </div>
-          <div class="col-sm-4 form-group">
-            <label for="tel">Phone</label>
-            <input
-              type="tel"
-              name="phone"
-              class="form-control"
-              id="tel"
-              placeholder="Enter Your Contact Number."
-              required
-            />
-          </div>
-          <div class="col-sm-4 form-group" style="float: right">
-            <img
-              src="https://i.ibb.co/yNGW4gg/avatar.png"
-              class="rounded-circle center"
-            /> -->
-        <!-- <img
-              src="https://i.ibb.co/yNGW4gg/avatar.png"
-              class="rounded float-right"
-              alt="img"
-            />
-            <img
-              id="blah"
-              src="https://ij.ibb.co/yNGW4gg/avatar.png156"
-              alt="your image"
-            /><br />
-
-            <input type="file" onchange="readURL(this);" />
-          </div>
-        </div> -->
-        <div class="col-md-12">
-        <div class="row">          
+        <div class="col-md-12 card">
+          <div class="row">
             <div class="col-md-4">
               <div class="form-group">
                 <label for="f-name">User Name</label><br />
                 <input
                   type="text"
                   name="f-name"
+                  id="f-name"
                   [(ngModel)]="userobj.firstName"
+                  [ngModelOptions]="{standalone: true}"
                   placeholder="First Name"
                   class="form-control"
                 />
@@ -195,281 +58,295 @@
 
             <div class="col-md-4">
               <div class="form-group">
-              <label for="l-name">Last Name</label>
-              <input
-                type="text"
-                name="l-name"
-                placeholder="Last Name"
-                class="form-control"
-              />
-            </div>
+                <label for="l-name">Last Name</label>
+                <input
+                  type="text"
+                  name="l-name"
+                  id="l-name"
+                  [(ngModel)]="userobj.lastName"
+                  [ngModelOptions]="{standalone: true}"
+                  placeholder="Last Name"
+                  class="form-control"
+                />
+              </div>
             </div>
           </div>
-          <label for="f-name">Mother's Name</label><br />
-          <input
-            type="text"
-            name="f-name"
-            placeholder="First Name"
-            style="width: 40%"
-          />
-          <input
-            type="text"
-            name="l-name"
-            placeholder="Last Name"
-            style="width: 40%"
-          /><br />
-          <label for="f-name">Father's Name</label><br />
-          <input
-            type="text"
-            name="f-name"
-            placeholder="First Name"
-            style="width: 40%"
-          />
-          <!-- <label for="l-name">Last Name</label> -->
-          <input
-            type="text"
-            name="l-name"
-            placeholder="Last Name"
-            style="width: 40%"
-          /><br />
-          <label for="Date">DOB</label>
-          <input
-            type="Date"
-            name="dob"
-            class="form-control"
-            id="Date"
-            placeholder=""
-            style="width: 35%; display: inline-block"
-            required
-          />
-          <label for="sex">Gender</label>
-          <select
-            id="sex"
-            class="form-control browser-default custom-select"
-            style="width: 13%; display: inline-block"
-          >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="unspesified">Unspecified</option>
-          </select>
-          <label for="caste">Caste</label>
-          <select
-            class="form-control browser-default custom-select"
-            style="width: 13%; display: inline-block"
-          >
-            <option selected>SC</option>
-            <option>ST</option>
-            <option>OBC</option>
-            <option>General</option></select
-          ><br />
-          <label for="email">Email Id</label>
-          <input
-            type="email"
-            class="form-control"
-            name="email"
-            id="email"
-            placeholder="Enter your email."
-            style="width: 32%; display: inline-block"
-            required
-          />
-          <label for="tel">Phone</label>
-          <input
-            type="tel"
-            name="phone"
-            class="form-control"
-            id="tel"
-            placeholder="Enter Your Contact Number."
-            style="width: 34%; display: inline-block"
-            required
-          />
-          <div class="col-sm-2">
-            <img
-              id="blah"
-              src="https://i.ibb.co/yNGW4gg/avatar.png"
-              alt="upload Image"
-              style="max-width: 180px"
-            />
-            <input type="file" onchange="readURL(this);" />
-          </div>
-        </div>
-      </form>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="mf-name">Mother's First Name</label><br />
+                <input
+                  type="text"
+                  name="mf-name"
+                  id="mf-name"
+                  [(ngModel)]="userobj.motherFname"
+                  [ngModelOptions]="{standalone: true}"
+                  placeholder="First Name"
+                  class="form-control"
+                />
+              </div>
+            </div>
 
-      <form>
-        <label for="First Name"><strong>Address Details</strong></label>
-        <div class="row jumbotron">
-          <div class="col-sm-6">
-            <table>
-              <tr id="tab">
-                <th style="text-align: center">Present Address</th>
-              </tr>
-              <tr>
-                <td>
-                  <label for="Address">Present Address</label><br />
-                  <input type="text" placeholder="Present Address" />
-                </td>
-                <td>
-                  <label for="Country">City</label>
-                  <select class="form-control custom-select browser-default">
-                    <option value="Afghanistan">Cuttack</option>
-                    <option value="Australia">Bhubaneswar</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label for="Country">State</label>
-                  <select class="form-control custom-select browser-default">
-                    <option value="Afghanistan">Odisha</option>
-                    <option value="Australia">Andhra Pradesh</option>
-                    <option value="Australia">Telengana</option>
-                  </select>
-                </td>
-                <td>
-                  <label for="Country">Country</label>
-                  <select class="form-control custom-select browser-default">
-                    <option value="Afghanistan">Afghanistan</option>
-                    <option value="Australia">Australia</option>
-                  </select>
-                </td>
-                <!-- <td>
-                  <label for="Country">Country</label>
-                  <select class="form-control custom-select browser-default">
-                    <option value="Afghanistan">Afghanistan</option>
-                    <option value="Australia">Australia</option>
-                  </select>
-                </td> -->
-              </tr>
-            </table>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="ml-name">Last Name</label>
+                <input
+                  type="text"
+                  name="ml-name"
+                  id="ml-name"
+                  [(ngModel)]="userobj.motherLname"
+                  placeholder="Last Name"
+                  class="form-control"
+                />
+              </div>
+            </div>
           </div>
-          <div class="col-sm-6">
-            <table>
-              <tr id="tab">
-                <th>Permanent Address</th>
-              </tr>
-              <tr>
-                <td>
-                  <label for="Address">Permanent Address</label><br />
-                  <input type="text" placeholder="Permanent Address" />
-                </td>
-                <td>
-                  <label for="Country">City</label>
-                  <select class="form-control custom-select browser-default">
-                    <option value="Afghanistan">Cuttack</option>
-                    <option value="Australia">Bhubaneswar</option>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="ff-name">Father's First Name</label><br />
+                <input
+                  type="text"
+                  name="ff-name"
+                  id="ff-name"
+                  [(ngModel)]="userobj.fatherFname"
+                  placeholder="First Name"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="fl-name">Last Name</label>
+                <input
+                  type="text"
+                  name="fl-name"
+                  id="fl-name"
+                  [(ngModel)]="userobj.fatherLname"
+                  placeholder="Last Name"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="Date">DOB</label>
+                <input
+                  type="Date"
+                  name="dob"
+                  id="dob"
+                  class="form-control"
+                  id="Date"
+                  [(ngModel)]="userobj.date"
+                  placeholder=""
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="sex">Gender</label>
+                  <select name="gender" id="gender" class="form-control" [(ngModel)]="userobj.gender">
+                    <option value="null" class="dropdown">Select</option>
+                    <option *ngFor="let g of genders" [ngValue]="g.name" class="dropdown">{{g.name}}</option>
                   </select>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label for="Country">State</label>
-                  <select class="form-control custom-select browser-default">
-                    <option value="Afghanistan">Odisha</option>
-                    <option value="Australia">Andhra Pradesh</option>
-                    <option value="Australia">Telengana</option>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="cast">Caste</label>
+                  <select name="caste" id="caste" class="form-control" [(ngModel)] = "userobj.caste">
+                    <option value="null" class="dropdown">Select</option>
+                    <option *ngFor="let cst of castes" [ngValue]="cst.name" class="dropdown">{{cst.name}}
+
+                    </option>
                   </select>
-                </td>
-                <td>
-                  <label for="Country">Country</label>
-                  <select class="form-control custom-select browser-default">
-                    <option value="Afghanistan">Afghanistan</option>
-                    <option value="Australia">Australia</option>
-                  </select>
-                </td>
-              </tr>
-            </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="email">Email Id</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  id="email"
+                  [(ngModel)]="userobj.email"
+                  placeholder="Enter your email."
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="tel">Phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  class="form-control"
+                  id="tel"
+                  [(ngModel)]="userobj.phone"
+                  placeholder="Enter Your Contact Number."
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="form-group">
+              <img
+                id="blah"
+                src="https://i.ibb.co/yNGW4gg/avatar.png"
+                alt="upload Image"
+                style="max-width: 180px"
+              />
+              <input type="file" onchange="readURL(this);" />
+            </div>
           </div>
         </div>
-        <!-- <div class="row jumbotron">
-          <div class="col-sm-16 form-group" style="height: 250px">
-            <label for="address-1">Present Address</label>
-            <input
-              type="address"
-              class="form-control"
-              name="Locality"
-              id="address-1"
-              placeholder="Present Address"
-              required
-            />
-          </div>
-          <div class="col-sm-6 form-group">
-            <label for="address-2">Permanent Address</label>
-            <input
-              type="address"
-              class="form-control"
-              name="address"
-              id="address-2"
-              placeholder="Permanent Address"
-              required
-            />
-          </div>
-          <div class="col-sm-4 form-group">
-            <label for="State">State</label>
-            <input
-              type="address"
-              class="form-control"
-              name="State"
-              id="State"
-              placeholder="Enter your state name."
-              required
-            />
-          </div>
-          <div class="col-sm-2 form-group">
-            <label for="zip">Pincode</label>
-            <input
-              type="zip"
-              class="form-control"
-              name="Zip"
-              id="zip"
-              placeholder="Pincode."
-              required
-            />
-          </div>
-          <div class="col-sm-2 form-group">
-            <label for="Country">Country</label>
-            <select class="form-control custom-select browser-default">
-              <option value="Afghanistan">Afghanistan</option>
-              <option value="Australia">Australia</option>
-              <option value="Austria">Austria</option>
-              <option value="Azerbaijan">Azerbaijan</option>
-              <option value="Bahamas">Bahamas</option>
-              <option value="Bahrain">Bahrain</option>
-              <option value="Bangladesh">Bangladesh</option>
-              <option value="Barbados">Barbados</option>
-              <option value="Belarus">Belarus</option>
-              <option value="Belgium">Belgium</option>
-              <option value="Belize">Belize</option>
-              <option value="Benin">Benin</option>
-              <option value="Bermuda">Bermuda</option>
-              <option value="Bhutan">Bhutan</option>
-              <option value="Bolivia">Bolivia</option>
-              <option value="Bosnia and Herzegovina">
-                Bosnia and Herzegovina
-              </option>
-              <option value="Botswana">Botswana</option>
-              <option value="Bouvet Island">Bouvet Island</option>
-              <option value="Brazil">Brazil</option>
-              <option value="British Indian Ocean Territory">
-                British Indian Ocean Territory
-              </option>
-              <option value="Brunei Darussalam">Brunei Darussalam</option>
-              <option value="Bulgaria">Bulgaria</option>
-              <option value="Congo">Congo</option>
-              <option value="Congo, The Democratic Republic of The">
-                Congo, The Democratic Republic of The
-              </option>
-              <option value="Cook Islands">Cook Islands</option>
-              <option value="Costa Rica">Costa Rica</option>
-              <option value="Morocco">Morocco</option>
-              <option value="Mozambique">Mozambique</option>
-              <option value="Myanmar">Myanmar</option>
-              <option value="Namibia">Namibia</option>
-              <option value="Nauru">Nauru</option>
-              <option value="Nepal">Nepal</option>
-              <option value="Netherlands">Netherlands</option>
-            </select>
-          </div>
-        </div> -->
       </form>
+      <form>
+        <h3  class="text-secondary"><strong>Address Details</strong></h3>
+        <div class="col-md-12 card">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="present">Present Address</label>
+                <textarea class="form-control" name="present" id="present" rows="1" placeholder="Address Line-1" [(ngModel)] = "userobj.present"></textarea>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="permanent">Permanent Address</label>
+                <textarea class="form-control" name="permanent" id="permanent" rows="1" placeholder="Address Line-2" [(ngModel)] = "userobj.permanent"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="Country">City</label>
+                <select class="form-control" name="city" id="city" [(ngModel)] ="userobj.city">
+                  <option value="null">Select</option>
+                  <option *ngFor="let ct of cities" class="dropdown" [ngValue] = "ct.name">{{ct.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="State">State</label>
+                <select class="form-control custom-select browser-default" name="state" id="state" [(ngModel)] ="userobj.state">
+                  <option value="null">Select</option>
+                  <option *ngFor="let s of states" class="dropdown" [ngValue] = "s.name">{{s.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="Country">City</label>
+                <select class="form-control" name="city" id="city" [(ngModel)] ="userobj.city">
+                  <option value="null">Select</option>
+                  <option *ngFor="let ct of cities" class="dropdown" [ngValue] = "ct.name">{{ct.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="State">State</label>
+                  <select class="form-control custom-select browser-default" name="state" id="state" [(ngModel)] ="userobj.state">
+                    <option value="null">Select</option>
+                    <option *ngFor="let s of states" class="dropdown" [ngValue] = "s.name">{{s.name}}</option>
+                  </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              
+              <div class="form-group">                
+                <label for="Country">Country</label>
+                <select class="form-control" name="Country" id="Country" tabindex="1" 
+                [(ngModel)]="userobj.country">
+                  <option value="null">Select</option>
+                  <option *ngFor="let c of country" class="dropdown"  [ngValue]="c.name">{{c.name}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="pincode">PIN Code</label>
+                <input type="text" class="form-control" id="code" name="code" [(ngModel)] = "userobj.cpincode" placeholder="Pincode"/>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="Country">Country</label>
+                <select class="form-control" name="Country" id="Country" tabindex="1" 
+                [(ngModel)]="userobj.country">
+                  <option value="null">Select</option>
+                  <option *ngFor="let c of country" class="dropdown"  [ngValue]="c.name">{{c.name}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="pincode">PIN Code</label>
+                <input type="text" class="form-control" id = "pin" name="pin" [(ngModel)] = "userobj.ppincode" placeholder="Pincode"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      
+      <!-- <form>
+        <h3 class="text-secondary"><strong>Address</strong></h3>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <label for="permanent">Permanent Address</label>
+                <textarea class="form-control" id="permanent" rows="1" placeholder="Address Line-2"></textarea>
+              </div>
+              <div class="card-body row">
+                <div class="col-md-3">
+                  <label for="Country">City</label>
+                  <select class="form-control custom-select browser-default">
+                    <option value="Afghanistan">Cuttack</option>
+                    <option value="Australia">Bhubaneswar</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <label for="Country">City</label>
+                  <select class="form-control custom-select browser-default">
+                    <option value="Afghanistan">Cuttack</option>
+                    <option value="Australia">Bhubaneswar</option>
+                  </select>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form> -->
       <form>
         <label for="First Name"><strong>Qualifications</strong></label>
         <div class="row jumbotron">
@@ -551,7 +428,9 @@
           </form> -->
         </div>
         <div class="cols-sm-12" style="text-align: right">
-          <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+          <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+            Submit
+          </button>
         </div>
       </form>
     </div>
