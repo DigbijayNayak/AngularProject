@@ -439,6 +439,25 @@
               </div>
             </div>
             
+            <table class="table-bordered">
+              <tr>
+                <th>Examination Type</th>
+                <th>Total Mark</th>
+                <th>Mark Secure</th>
+                <th>Percentage</th>
+                <th>Year Of Passing</th>
+                <th>Institute Name</th>
+                <th>Action</th>
+              </tr>
+              <tr *ngFor="let value of educationData; let i = index;">
+                <td>{{value.examType}}</td>
+                <td>{{value.totalMark}}</td>
+                <td>{{value.markSecure}}</td>
+                <td>{{value.percentage}}</td>
+                <td>{{value.yearOfPassing}}</td>
+                <td>{{value.instituteName}}</td>
+              </tr>
+            </table>
             
             <table id="tab" class="mt-5 ml-auto mr-auto">
               <tr id="tab">
@@ -528,17 +547,54 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Qualification Details</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              ...
+              <form>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <label>Exam Type</label>
+                        <select name="exam" id="exam" [(ngModel)] = "eduObj.examType">
+                          <option value="null">Select</option>
+                          <option *ngFor = "let ex of exams" [value] = "ex.name">{{ex.name}}</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-4">
+                        <label>Total Mark</label>
+                        <input type="text" class="form-control" id="total" name="total" [(ngModel)] = "eduObj.totalMark">
+                      </div>
+                      <div class="col-sm-4">
+                        <label>Mark Secure</label>
+                        <input type="text" class="form-control" id="mark" name="mark" [(ngModel)] = "eduObj.markSecure">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <label>Percentage</label>
+                        <input type="text" class="form-control" id="percentage" name="percentage" [(ngModel)]="eduObj.percentage">
+                      </div>
+                      <div class="col-sm-4">
+                        <label>Year Of Passing</label>
+                        <input type="text" class="form-control" id="yearofPassing" name="yearofPassing" 
+                        [(ngModel)] = "eduObj.yearOfPassing">
+                      </div>
+                      <div class="col-sm-4">
+                        <label>Institute Name</label>
+                        <input type="text" class="form-control" id="institute" name="institute" [(ngModel)] = "eduObj.instituteName">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" (click) = "onClickCancel()">Cancel</button>
+              <button type="button" class="btn btn-primary" (click) = "onModalSubmit(eduObj)">Submit</button>
             </div>
           </div>
         </div>
