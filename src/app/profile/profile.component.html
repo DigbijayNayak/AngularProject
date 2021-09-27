@@ -35,9 +35,8 @@
   </head>
   <body>
     <h1>MY PROFILE</h1>
-
     <div class="container">
-      <h3  class="text-secondary"><strong>Applicant Details</strong></h3>
+      <h3 class="text-secondary"><strong>Applicant Details</strong></h3>
       <form>
         <div class="col-md-12 card">
           <div class="row">
@@ -49,7 +48,7 @@
                   name="f-name"
                   id="f-name"
                   [(ngModel)]="userobj.firstName"
-                  [ngModelOptions]="{standalone: true}"
+                  [ngModelOptions]="{ standalone: true }"
                   placeholder="First Name"
                   class="form-control"
                 />
@@ -64,7 +63,7 @@
                   name="l-name"
                   id="l-name"
                   [(ngModel)]="userobj.lastName"
-                  [ngModelOptions]="{standalone: true}"
+                  [ngModelOptions]="{ standalone: true }"
                   placeholder="Last Name"
                   class="form-control"
                 />
@@ -80,7 +79,7 @@
                   name="mf-name"
                   id="mf-name"
                   [(ngModel)]="userobj.motherFname"
-                  [ngModelOptions]="{standalone: true}"
+                  [ngModelOptions]="{ standalone: true }"
                   placeholder="First Name"
                   class="form-control"
                 />
@@ -152,21 +151,41 @@
             <div class="col-md-2">
               <div class="form-group">
                 <label for="sex">Gender</label>
-                  <select name="gender" id="gender" class="form-control" [(ngModel)]="userobj.gender">
-                    <option value="null" class="dropdown">Select</option>
-                    <option *ngFor="let g of genders" [ngValue]="g.name" class="dropdown">{{g.name}}</option>
-                  </select>
+                <select
+                  name="gender"
+                  id="gender"
+                  class="form-control"
+                  [(ngModel)]="userobj.gender"
+                >
+                  <option value="null" class="dropdown">Select</option>
+                  <option
+                    *ngFor="let g of genders"
+                    [ngValue]="g.name"
+                    class="dropdown"
+                  >
+                    {{ g.name }}
+                  </option>
+                </select>
               </div>
             </div>
             <div class="col-md-2">
               <div class="form-group">
                 <label for="cast">Caste</label>
-                  <select name="caste" id="caste" class="form-control" [(ngModel)] = "userobj.caste">
-                    <option value="null" class="dropdown">Select</option>
-                    <option *ngFor="let cst of castes" [ngValue]="cst.name" class="dropdown">{{cst.name}}
-
-                    </option>
-                  </select>
+                <select
+                  name="caste"
+                  id="caste"
+                  class="form-control"
+                  [(ngModel)]="userobj.caste"
+                >
+                  <option value="null" class="dropdown">Select</option>
+                  <option
+                    *ngFor="let cst of castes"
+                    [ngValue]="cst.name"
+                    class="dropdown"
+                  >
+                    {{ cst.name }}
+                  </option>
+                </select>
               </div>
             </div>
           </div>
@@ -215,20 +234,34 @@
         </div>
       </form>
       <form>
-        <h3  class="text-secondary"><strong>Address Details</strong></h3>
+        <h3 class="text-secondary"><strong>Address Details</strong></h3>
         <div class="col-md-12 card">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <label for="present">Present Address</label>
-                <textarea class="form-control" name="present" id="present" rows="1" placeholder="Address Line-1" [(ngModel)] = "userobj.present"></textarea>
+                <textarea
+                  class="form-control"
+                  name="present"
+                  id="present"
+                  rows="1"
+                  placeholder="Address Line-1"
+                  [(ngModel)]="addressobj.present"
+                ></textarea>
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="form-group">
                 <label for="permanent">Permanent Address</label>
-                <textarea class="form-control" name="permanent" id="permanent" rows="1" placeholder="Address Line-2" [(ngModel)] = "userobj.permanent"></textarea>
+                <textarea
+                  class="form-control"
+                  name="permanent"
+                  id="permanent"
+                  rows="1"
+                  placeholder="Address Line-2"
+                  [(ngModel)]="addressobj.permanent"
+                ></textarea>
               </div>
             </div>
           </div>
@@ -236,47 +269,101 @@
             <div class="col-md-3">
               <div class="form-group">
                 <label for="Country">City</label>
-                <select class="form-control" name="city" id="city" [(ngModel)] ="userobj.city">
+                <select
+                  class="form-control"
+                  name="city"
+                  id="city"
+                  [(ngModel)]="addressobj.ccity"
+                >
                   <option value="null">Select</option>
-                  <option *ngFor="let ct of cities" class="dropdown" [ngValue] = "ct.name">{{ct.name}}</option>
+                  <option
+                    *ngFor="let ct of cities"
+                    class="dropdown"
+                    [ngValue]="ct.name"
+                  >
+                    {{ ct.name }}
+                  </option>
                 </select>
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
                 <label for="State">State</label>
-                <select class="form-control custom-select browser-default" name="state" id="state" [(ngModel)] ="userobj.state">
+                <select
+                  class="form-control custom-select browser-default"
+                  name="state"
+                  id="state"
+                  [(ngModel)]="addressobj.cstate"
+                >
                   <option value="null">Select</option>
-                  <option *ngFor="let s of states" class="dropdown" [ngValue] = "s.name">{{s.name}}</option>
+                  <option
+                    *ngFor="let s of states"
+                    class="dropdown"
+                    [ngValue]="s.name"
+                  >
+                    {{ s.name }}
+                  </option>
                 </select>
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
                 <label for="Country">City</label>
-                <select class="form-control" name="city" id="city" [(ngModel)] ="userobj.city">
+                <select
+                  class="form-control"
+                  name="city"
+                  id="city"
+                  [(ngModel)]="addressobj.pcity"
+                >
                   <option value="null">Select</option>
-                  <option *ngFor="let ct of cities" class="dropdown" [ngValue] = "ct.name">{{ct.name}}</option>
+                  <option
+                    *ngFor="let ct of cities"
+                    class="dropdown"
+                    [ngValue]="ct.name"
+                  >
+                    {{ ct.name }}
+                  </option>
                 </select>
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
                 <label for="State">State</label>
-                  <select class="form-control custom-select browser-default" name="state" id="state" [(ngModel)] ="userobj.state">
-                    <option value="null">Select</option>
-                    <option *ngFor="let s of states" class="dropdown" [ngValue] = "s.name">{{s.name}}</option>
-                  </select>
+                <select
+                  class="form-control custom-select browser-default"
+                  name="state"
+                  id="state"
+                  [(ngModel)]="addressobj.pstate"
+                >
+                  <option value="null">Select</option>
+                  <option
+                    *ngFor="let s of states"
+                    class="dropdown"
+                    [ngValue]="s.name"
+                  >
+                    {{ s.name }}
+                  </option>
+                </select>
               </div>
             </div>
             <div class="col-md-3">
-              
-              <div class="form-group">                
+              <div class="form-group">
                 <label for="Country">Country</label>
-                <select class="form-control" name="Country" id="Country" tabindex="1" 
-                [(ngModel)]="userobj.country">
+                <select
+                  class="form-control"
+                  name="Country"
+                  id="Country"
+                  tabindex="1"
+                  [(ngModel)]="addressobj.ccountry"
+                >
                   <option value="null">Select</option>
-                  <option *ngFor="let c of country" class="dropdown"  [ngValue]="c.name">{{c.name}}</option>
+                  <option
+                    *ngFor="let c of country"
+                    class="dropdown"
+                    [ngValue]="c.name"
+                  >
+                    {{ c.name }}
+                  </option>
                 </select>
               </div>
             </div>
@@ -284,16 +371,34 @@
             <div class="col-md-3">
               <div class="form-group">
                 <label for="pincode">PIN Code</label>
-                <input type="text" class="form-control" id="code" name="code" [(ngModel)] = "userobj.cpincode" placeholder="Pincode"/>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="code"
+                  name="code"
+                  [(ngModel)]="addressobj.cpincode"
+                  placeholder="Pincode"
+                />
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
                 <label for="Country">Country</label>
-                <select class="form-control" name="Country" id="Country" tabindex="1" 
-                [(ngModel)]="userobj.country">
+                <select
+                  class="form-control"
+                  name="Country"
+                  id="Country"
+                  tabindex="1"
+                  [(ngModel)]="addressobj.pcountry"
+                >
                   <option value="null">Select</option>
-                  <option *ngFor="let c of country" class="dropdown"  [ngValue]="c.name">{{c.name}}</option>
+                  <option
+                    *ngFor="let c of country"
+                    class="dropdown"
+                    [ngValue]="c.name"
+                  >
+                    {{ c.name }}
+                  </option>
                 </select>
               </div>
             </div>
@@ -301,57 +406,41 @@
             <div class="col-md-3">
               <div class="form-group">
                 <label for="pincode">PIN Code</label>
-                <input type="text" class="form-control" id = "pin" name="pin" [(ngModel)] = "userobj.ppincode" placeholder="Pincode"/>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="pin"
+                  name="pin"
+                  [(ngModel)]="addressobj.ppincode"
+                  placeholder="Pincode"
+                />
               </div>
             </div>
           </div>
         </div>
       </form>
+
+
+
+      <h3 class="text-secondary"><strong>Qualifications</strong></h3>
       
-      <!-- <form>
-        <h3 class="text-secondary"><strong>Address</strong></h3>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <label for="permanent">Permanent Address</label>
-                <textarea class="form-control" id="permanent" rows="1" placeholder="Address Line-2"></textarea>
-              </div>
-              <div class="card-body row">
-                <div class="col-md-3">
-                  <label for="Country">City</label>
-                  <select class="form-control custom-select browser-default">
-                    <option value="Afghanistan">Cuttack</option>
-                    <option value="Australia">Bhubaneswar</option>
-                  </select>
-                </div>
-                <div class="col-md-3">
-                  <label for="Country">City</label>
-                  <select class="form-control custom-select browser-default">
-                    <option value="Afghanistan">Cuttack</option>
-                    <option value="Australia">Bhubaneswar</option>
-                  </select>
-              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form> -->
-      <form>
-        <label for="First Name"><strong>Qualifications</strong></label>
-        <div class="row jumbotron">
+      <form class="">
+        <div class="row card">
           <div class="col-sm-12">
-            <table id="tab">
+            <div class="row">
+              <div class="col-12 text-right">
+                <button
+              type="button"
+              class="btn btn-primary mt-3"
+              (click) = "onClickAdd()"
+            >
+              Add
+            </button>
+              </div>
+            </div>
+            
+            
+            <table id="tab" class="mt-5 ml-auto mr-auto">
               <tr id="tab">
                 <th id="tab">SI NO.</th>
                 <th>Examination</th>
@@ -418,6 +507,8 @@
                 <td id="all">(upto 2 decimal)</td>
               </tr> -->
             </table>
+            <br />
+            <br />
           </div>
 
           <!-- <form class="form-horizontal">
@@ -433,6 +524,27 @@
           </button>
         </div>
       </form>
+      <div class="modal fade" id="educationalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->
     </div>
     <script></script>
   </body>

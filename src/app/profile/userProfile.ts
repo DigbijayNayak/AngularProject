@@ -11,11 +11,4 @@ export class UserProfile
   caste:string;
   email:string;
   phone:number;
-  present:string;
-  permanent:string;
-  city: string;
-  state: string;
-  country: string;
-  cpincode:number;
-  ppincode:number;
 }
